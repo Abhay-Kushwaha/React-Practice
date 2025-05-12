@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect} from 'react'
+import { useState, useCallback, useEffect, useRef} from 'react'
 
 const Password = () => {
     const [length, setLength] = useState(8)
@@ -6,6 +6,14 @@ const Password = () => {
     const [symbol, setSymbolAllowed] = useState(false)
     const [smallchar, setCharAllowed] = useState(false)
     const [password, setPassword] = useState('')
+
+    const ref=useRef()
+
+    const CopyPassword = () => {
+        window.navigator.clipboard.writeText(password);
+        alert('Password copied to clipboard');
+        ref.current?.select();
+    }
 
     const generatePassword = useCallback(() => {
         let pass = ''
@@ -27,21 +35,28 @@ const Password = () => {
 
 
 
-    
+
     return (
         <div className='bg-gray-800 w-auto h-auto flex items-center center flex-col py-10 px-5 rounded-lg'>
             <div className='flex items-center mb-10'>
-                <input type='text' className='bg-white rounded-b-sm p-3 font-medium text-2xl'
+                <input
+                    type='text'
+                    className='bg-white rounded-b-sm p-3 font-medium text-2xl'
                     value={password}
                     placeholder='Password'
+                    ref={ref}
                     readOnly
                 />
-                <button className='bg-blue-800 outline-none text-white px-3 py-3 shrink-0 font-medium text-2xl'>Copy</button>
+                <button
+                    onClick={() => { CopyPassword() }} className='bg-blue-800 outline-none text-white px-3 py-3 shrink-0 font-medium text-2xl'>Copy</button>
             </div>
             <div className='flex justify-between gap-3 font-light text-2xl text-white '>
                 <div>
-                    <label htmlFor='range' className='text-white font-medium text-2xl'>Length</label>
-                    <input type='range' className='bg-white rounded-b-sm font-medium text-2xl w-3xs'
+                    <label
+                        htmlFor='range' className='text-white font-medium text-2xl'>Length</label>
+                    <input
+                        type='range'
+                        className='bg-white rounded-b-sm font-medium text-2xl w-3xs'
                         name=''
                         id=''
                         min={6}
@@ -52,7 +67,8 @@ const Password = () => {
                     />
                 </div>
                 <div>
-                    <input type="checkbox"
+                    <input
+                        type="checkbox"
                         name=""
                         id=""
                         className='h-6 w-6 m-1'
@@ -62,7 +78,8 @@ const Password = () => {
                     <label htmlFor='number'>Numbers</label>
                 </div>
                 <div>
-                    <input type="checkbox"
+                    <input
+                        type="checkbox"
                         name=""
                         id=""
                         className='h-6 w-6 m-1'

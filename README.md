@@ -5,3 +5,5 @@ Working on Password Generator
 UseCallback for change
 
 UseEffect to rerender the content at certain events
+
+Useref to get the reference of the element
