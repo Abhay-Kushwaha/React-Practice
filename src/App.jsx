@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Buttons from '../components/buttons'
 import Password from '../components/Password'
+import { useEffect } from 'react' 
+import Navbar from '../components/Navbar'
 
 function App() {
 
@@ -25,8 +27,9 @@ function App() {
 
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center p-4" style={{ backgroundColor: color }}>
-      <div className="bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl p-10 mb-10 max-w-md w-full text-center">
+    <div className="w-full h-screen flex flex-col items-center justify-baseline" style={{ backgroundColor: color }}>
+      <Navbar />
+      <div className="bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl p-10 mb-5 mt-10 max-w-md w-full text-center">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-4 underline underline-offset-4">
           Hello World!
         </h1>
@@ -39,13 +42,13 @@ function App() {
         <div className="flex justify-center gap-4 mb-6">
           <button
             onClick={Add}
-            className="bg-amber-200 hover:bg-amber-300 text-black font-semibold py-2 px-6 rounded-full border-2 border-amber-500 shadow-sm transition duration-300"
+            className="bg-amber-200 hover:bg-amber-300 text-black font-semibold cursor-pointer px-4 rounded-full border-2 border-amber-500 shadow-sm transition duration-300"
           >
             Add
           </button>
           <button
             onClick={Subtract}
-            className="bg-amber-200 hover:bg-amber-300 text-black font-semibold py-2 px-6 rounded-full border-2 border-amber-500 shadow-sm transition duration-300"
+            className="bg-amber-200 hover:bg-amber-300 text-black font-semibold cursor-pointer px-4 rounded-full border-2 border-amber-500 shadow-sm transition duration-300"
           >
             Subtract
           </button>

@@ -37,18 +37,18 @@ const Password = () => {
 
 
     return (
-        <div className='bg-gray-800 w-auto h-auto flex items-center center flex-col py-10 px-5 rounded-lg'>
+        <div className='bg-gray-800 w-auto h-auto flex items-center center flex-col py-6 px-5 rounded-lg'>
             <div className='flex items-center mb-10'>
                 <input
                     type='text'
-                    className='bg-white rounded-b-sm p-3 font-medium text-2xl'
+                    className='bg-white rounded-b-sm p-2 font-medium text-2xl'
                     value={password}
                     placeholder='Password'
                     ref={ref}
                     readOnly
                 />
                 <button
-                    onClick={() => { CopyPassword() }} className='bg-blue-800 outline-none text-white px-3 py-3 shrink-0 font-medium text-2xl'>Copy</button>
+                    onClick={() => { CopyPassword() }} className='bg-blue-800 outline-none text-white px-3 py-2 shrink-0 font-medium text-2xl'>Copy</button>
             </div>
             <div className='flex justify-between gap-3 font-light text-2xl text-white '>
                 <div>
