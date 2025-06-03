@@ -3,7 +3,7 @@ import './App.css'
 import Buttons from '../components/buttons'
 import Password from '../components/Password'
 import { useEffect } from 'react' 
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-baseline" style={{ backgroundColor: color }}>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl p-10 mb-5 mt-10 max-w-md w-full text-center">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-4 underline underline-offset-4">
           Hello World!

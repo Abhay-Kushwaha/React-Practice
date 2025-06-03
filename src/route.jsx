@@ -1,19 +1,20 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import Navbar from '../components/Navbar'
 import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Toggler from "./Pages/Toggler";
 
 export const router = createBrowserRouter([
     {
-        path:"/",
-        element: <App />,
+        path: "/",
+        element: <><Navbar /> <App /></>,
     },
     {
-        path:"/about",
-        element: <About />,
+        path: "/about",
+        element: <><Navbar /> <About /></>,
     },
     {
-        path:"/contact",
-        element: <Contact />,
+        path: "/toggler",
+        element: <><Navbar /> <Toggler /></>,
     }
 ])
